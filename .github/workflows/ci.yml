@@ -1,0 +1,23 @@
+name: Contract checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: node --test test/*.test.mjs
+      - name: Prepare synthetic environment contracts
+        run: node --input-type=module -e 'import {writeFileSync} from "node:fs"; writeFileSync(".env.reference", "PORT=3000\nMODE=test\n"); writeFileSync(".env.candidate", "PORT=4000\nMODE=ci\n");'
+      - uses: ./
+        with:
+          tool: env
+          reference: .env.reference
+          candidate: .env.candidate
