@@ -18,7 +18,7 @@ steps:
 
 Entradas: `tool` (`json` ou `env`), `reference`, `candidate`. Saídas: `status` e `exit-code`. O passo falha com 1 em diferenças e 2 em entrada inválida. O resumo publica apenas estado e contagens; nunca caminhos, nomes de chaves, trechos ou valores. Argumentos são passados por variáveis de ambiente, sem interpolação de shell.
 
-O exemplo aponta para o repositório dedicado `YagoLagrottiBracco/resource-contract-checks@v1`, cuja publicação está pendente na preparação desta distribuição. Até a publicação, use o ZIP local. Releases `v1.0.0` e `v1` serão publicadas após verificação. A listagem no Marketplace depende de aceite da conta; não há alegação de listagem.
+A Action está publicada neste repositório com as tags `v1` e `v1.0.0` e a release `v1.0.0`. A execução real passou em Node 20 e 22 no GitHub Actions. Prefira fixar o SHA completo revisado. A listagem no Marketplace depende de aceite da conta; não há alegação de listagem. O ZIP imutável preserva a documentação da preparação da release.
 
 ```sh
 node --test test/*.test.mjs

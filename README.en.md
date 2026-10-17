@@ -18,7 +18,7 @@ steps:
 
 Inputs: `tool` (`json` or `env`), `reference`, `candidate`. Outputs: `status` and `exit-code`. The step fails with 1 for differences and 2 for invalid input. Summaries publish only status and counts, never paths, key names, snippets or values. Arguments use environment variables without shell interpolation.
 
-The example targets the dedicated repository `YagoLagrottiBracco/resource-contract-checks@v1`, whose publication is pending while this distribution is prepared. Until publication, use the local ZIP. Releases `v1.0.0` and `v1` will be published after verification. Marketplace listing depends on account acceptance; no listing is claimed.
+The Action is published in this repository with `v1` and `v1.0.0` tags and a `v1.0.0` release. Real workflow execution passed on Node 20 and 22 in GitHub Actions. Prefer a reviewed full commit SHA. Marketplace listing requires account acceptance; no listing is claimed. The immutable ZIP preserves its release-preparation documentation.
 
 ```sh
 node --test test/*.test.mjs
